@@ -1,6 +1,7 @@
 import React from "react";
-import { TitleText, TopicText } from "./Texts";
 import Button from "./Button";
+import { TopicText, TitleText, DateText } from "./Texts";
+
 
 const ArticleItem = ({image, topic, title, date}) => {
     return (
@@ -20,11 +21,18 @@ const ArticleItem = ({image, topic, title, date}) => {
 }
 
 const Articles = ({articles}) => {
+
+    const articleRows = [];
+    for (let i = 0; i < articles.length; i += 2) {
+        const row = [articles[i], articles[i + 1]];
+        articleRows.push(row)
+    }
+
     return (
         <div className="article-items">
-            {articles.map((row, rowIndex) => (
+            {articleRows?.map((row, rowIndex) => (
                 <div key = {rowIndex} className="article-row">
-                    {row.map((article, articleIndex) => (
+                    {row?.map((article, articleIndex) => (
                         <ArticleItem
                             key = {articleIndex}
                             image = {article.image}
