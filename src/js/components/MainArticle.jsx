@@ -2,27 +2,35 @@ import React from "react";
 import { IntroText, TitleText, TopicText } from "./Texts";
 import Button from "./Button";
 
+
+const handleButtonClick = () => {
+    //Do something
+}
+
 const MainArticle = ({item}) => {
+
     
     return (
         <>
-        <div className="main-article">
-            <div className="main-image">
+        <div className="container main-article">
+            <div className="card main-article">
                 <img 
+                    className="card-img-top"
                     src ={item.urlToImage}
                     alt={item.title}
                 />
+                <div 
+                className="main-article-details">
+                    <TopicText topic = "Topic" />
+                    <TitleText title={item.title} />
+                    <IntroText intro={item.description} />
+                    <Button text="Read More" onClick={handleButtonClick} />
+                </div>
             </div>
-            <div className="article-details">
-                <TopicText >Topic</TopicText>
-                <TitleText>{item.title}</TitleText>
-                <IntroText>{item.description}</IntroText>
-                <Button bg="black"></Button>
-            </div>
+            <hr className="hr-divider"></hr>
         </div>
         </>
     )
-
 }
 
 export default MainArticle;

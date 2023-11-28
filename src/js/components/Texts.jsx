@@ -3,9 +3,9 @@ import React from "react";
 export const TitleText = ({title}) => {
     return (
         <>
-            <h1 className="title-text">
+            <h3 className="title-text">
                 {title}
-            </h1>
+            </h3>
         </>
     );
 
@@ -14,9 +14,9 @@ export const TitleText = ({title}) => {
 export const TopicText = ({topic}) => {
     return (
         <>
-        <p className="topic-text">
+        <h4 className="topic-text">
             {topic}
-        </p>
+        </h4>
     </>
     );
 }

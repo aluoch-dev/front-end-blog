@@ -1,8 +1,4 @@
-@import "../scss/components/app.scss";
-@import "../scss/components/main.scss";
-
-
-@font-face {
+ @font-face {
     font-family: "Messiri";
     src: url('./../../fonts/ElMessiri-Medium.ttf') format('ttf');
   }
@@ -57,6 +53,46 @@
   }
 
   .button-class {
-    font-family: 'Messir';
+    font-family: 'Messiri';
   }
-  
+
+.card-element {
+    width: 18rem;
+}
+
+.main-article {
+    align-items: start;
+    margin: 0px;
+    padding: 20px;
+    width: 100%;
+    overflow: hidden;
+    background: white;
+}
+
+.article-item {
+    align-items: center;
+    margin: 0px;
+    padding: 20px;
+    width: 100%;
+    overflow: hidden;
+    background: white;
+}
+
+.article-rows{
+    display: inline-flex;
+}
+
+.hr-divider {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid gray;
+}
+
+.article-wrapper {
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width:50%;
+}
+
