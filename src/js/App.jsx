@@ -7,8 +7,6 @@ import { useState } from "react";
 function App() {
 
   const [items, setItems] = useState([])
-  const [active, setActive] = useState(1)
-  const [category, setCategory] = useState("all")
 
   useEffect(() => {
     fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=16900b65925245b4a02047e1cf0027c5`)

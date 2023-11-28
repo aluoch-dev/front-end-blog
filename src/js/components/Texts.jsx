@@ -1,30 +1,4 @@
 import React from "react";
-import styled from 'styled-components'
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: black;
-`;
-
-const Topic = styled.h2`
-  font-size: 1.5em;
-  text-align: center;
-  color: gray;
-`;
-
-const Intro = styled.p`
-  font-size: 1.5em;
-  text-align: center;
-  color: black;
-`;
-
-const Date = styled.h4`
-  font-size: 1.5em;
-  text-align: center;
-  color: gray;
-`;
-
 
 export const TitleText = ({title}) => {
     return (
