@@ -1,32 +1,42 @@
+import React, { useEffect } from "react";
 import { useState } from "react";
-import reactLogo from "/react.svg";
-import viteLogo from "/vite.svg";
+import Search from "./components/Search";
+import MainArticle from "./components/MainArticle";
+import ArticlesDisplay from "./components/Articles";
 
 function App() {
-  const [count, setCount] = useState(0);
 
+  const [items, setItems] = useState([])
+  const [latestItem, setLatestItem] = useState([])
+
+  useEffect(() => {
+    fetch(`https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=d65c1d60e119401fb6895b18270517af`)
+    .then(res => {
+      if(!res.ok) {
+        throw new Error('Api call unsuccessful');
+      }
+      return res.json();
+    })
+    .then(data => {
+
+      if (data.articles && data.articles.length > 0) {
+        
+        setItems(data.articles)
+        setLatestItem(data.articles[0]);
+
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+
+  }, []);
+      
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     <Search />
+     <MainArticle item={latestItem} />
+     <ArticlesDisplay articles={items}/>
     </>
   );
 }
