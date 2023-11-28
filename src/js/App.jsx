@@ -1,24 +1,37 @@
 import React, { useEffect } from "react";
 import Search from "./components/Search";
 import MainArticle from "./components/MainArticle";
-import Articles from "./components/Articles";
+
 import { useState } from "react";
+import ArticlesDisplay from "./components/Articles";
 
 function App() {
 
   const [items, setItems] = useState([])
+  const [latestItem, setLatestItem] = useState([])
 
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=16900b65925245b4a02047e1cf0027c5`)
+    fetch(`https://newsapi.org/v2/top-headlines/sources?apiKey=16900b65925245b4a02047e1cf0027c5`)
     .then(res => res.json())
-    .then(data => setItems(data.articles))
-  })
+    .then(data => {
 
+      setItems(data.articles)
+      
+      if (data.articles.length > 0) {
+        setLatestItem(data.articles[0]);
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+
+  }, []);
+      
   return (
     <>
      <Search />
-     <MainArticle />
-     <Articles articles={items}/>
+     <MainArticle item={latestItem} />
+     <ArticlesDisplay articles={items}/>
     </>
   );
 }

@@ -1,2 +1,62 @@
 @import "../scss/components/app.scss";
 @import "../scss/components/main.scss";
+
+
+@font-face {
+    font-family: "Messiri";
+    src: url('./../../fonts/ElMessiri-Medium.ttf') format('ttf');
+  }
+  
+  @font-face {
+    font-family: "Martel";
+    src: url('./../../fonts/MartelSans-Regular.ttf') format('ttf');
+  }
+  
+  .top-search {
+    margin: 0px;
+    padding: 20px;
+    width: 100%;
+    overflow: hidden;
+    background: white;
+  }
+
+  .search-input {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Martel';
+    display: table;
+  }
+  
+  .title-text {
+    font-family: 'Messiri';
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+  }
+  
+  .topic-text {
+    font-family: 'Messiri';
+    font-size: 1.5em;
+    text-align: center;
+    color: gray;
+  }
+  
+  .intro-text {
+    font-family: 'Martel';
+    font-size: 1.5em;
+    text-align: center;
+    color: black;
+  }
+  
+  .date-text {
+    font-family: 'Martel';
+    font-size: 1.5em;
+    text-align: center;
+    color: gray;
+  }
+
+  .button-class {
+    font-family: 'Messir';
+  }
+  
