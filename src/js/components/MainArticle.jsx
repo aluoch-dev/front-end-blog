@@ -12,10 +12,10 @@ const MainArticle = ({item}) => {
     
     return (
         <>
-        <div className="container main-article">
+        <div className="container">
             <div className="card main-article">
                 <img 
-                    className="card-img-top"
+                    className="card-img-top image-style"
                     src ={item.urlToImage}
                     alt={item.title}
                 />

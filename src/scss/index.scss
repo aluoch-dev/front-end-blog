@@ -58,23 +58,23 @@
     &__primary {
         background-color: black;
         color: white;
-    }
 
-    &__primary::hover {
-        background-color: white;
-        color: black;
+        &:hover {
+            background-color: white;
+            color: black;
+        }
     }
 
     &__secondary {
         background-color: white;
         color: black;
-    }
 
-    &__secondary::hover {
-        background-color: black;
-        color: white;
+        &:hover {
+            background-color: black;
+            color: white;
+        }
     }
-  }
+}
 
 .card-element {
     width: 18rem;
@@ -83,13 +83,13 @@
 .main-article {
     align-items: start;
     margin: 0px;
-    padding: 20px;
     width: 100%;
     overflow: hidden;
     background: white;
 }
 
 .main-article-details {
+    justify-items: left;
     align-items: start;
     margin: 0px;
     padding: 20px;
