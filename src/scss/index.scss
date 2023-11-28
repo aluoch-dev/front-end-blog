@@ -54,6 +54,26 @@
 
   .button-class {
     font-family: 'Messiri';
+
+    &__primary {
+        background-color: black;
+        color: white;
+    }
+
+    &__primary::hover {
+        background-color: white;
+        color: black;
+    }
+
+    &__secondary {
+        background-color: white;
+        color: black;
+    }
+
+    &__secondary::hover {
+        background-color: black;
+        color: white;
+    }
   }
 
 .card-element {
@@ -69,7 +89,16 @@
     background: white;
 }
 
-.article-item {
+.main-article-details {
+    align-items: start;
+    margin: 0px;
+    padding: 20px;
+    width: 100%;
+    overflow: hidden;
+    background: white;
+}
+
+.article-details {
     align-items: center;
     margin: 0px;
     padding: 20px;
@@ -78,8 +107,11 @@
     background: white;
 }
 
-.article-rows{
-    display: inline-flex;
+.article-item {
+    align-items: center;
+    margin-top: 24px;
+    overflow: hidden;
+    background: white;
 }
 
 .hr-divider {
@@ -96,3 +128,10 @@
     width:50%;
 }
 
+.item-row {
+    margin-top: 24px;
+}
+
+.image-style {
+    height: 240px;
+}

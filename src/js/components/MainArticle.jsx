@@ -24,7 +24,7 @@ const MainArticle = ({item}) => {
                     <TopicText topic = "Topic" />
                     <TitleText title={item.title} />
                     <IntroText intro={item.description} />
-                    <Button text="Read More" onClick={handleButtonClick} />
+                    <Button text="Read More" className="button-class primary" onClick={handleButtonClick} />
                 </div>
             </div>
             <hr className="hr-divider"></hr>

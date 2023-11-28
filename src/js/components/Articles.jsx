@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import { Row, Col } from 'react-bootstrap';
 import { TopicText, TitleText, DateText } from "./Texts";
 
 
@@ -16,7 +17,7 @@ const ArticleItem = ({article}) => {
         <>
         <div className="card article-item">
             <img 
-                className="card-img-top"
+                className="card-img-top image-style"
                 src ={article.urlToImage}
                 alt={article.title}
             />
@@ -25,7 +26,7 @@ const ArticleItem = ({article}) => {
             <TopicText topic = "Topic" />
             <TitleText title={article.title} />
             <DateText>{date}</DateText>
-            <Button text="Read More" onClick={handleButtonClick} />
+            <Button text="Read More" className="button-class secondary" onClick={handleButtonClick} />
         </div>
     </div>
     </>
@@ -41,16 +42,18 @@ const ArticlesDisplay = ({articles}) => {
     }
 
     return (
-        <div className="container article-rows">
-            {articlePairs.map((pair, rowIndex) => (
-                <div className="container article-row" key={rowIndex}>
-                {pair.map((article, colIndex) => (
-                    <ArticleItem key={colIndex} article={article} />
-                ))}
-                </div>
-            ))}
+        <div className="container justify-content-center">
+          {articlePairs.map((pair, columnIndex) => (
+            <Row key={columnIndex} className="item-row">
+              {pair.map((article, rowIndex) => (
+                <Col key={rowIndex} xs-4>
+                  <ArticleItem article={article} />
+                </Col>
+              ))}
+            </Row>
+          ))}
         </div>
-    )
+      );
 }
 
 export default ArticlesDisplay;
