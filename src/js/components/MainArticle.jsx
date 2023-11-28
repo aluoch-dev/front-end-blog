@@ -4,7 +4,7 @@ import Button from "./Button";
 
 
 const handleButtonClick = () => {
-    //Do something
+    //This should link to ArticleItem page. Not yet designed.
 }
 
 const MainArticle = ({item}) => {

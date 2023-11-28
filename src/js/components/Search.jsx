@@ -1,5 +1,11 @@
 import React from "react";
 
+/*
+Must be done. 
+This should have been an Input button given we have no
+ submit button. On user click, we should display the different 
+ articles with keywords. 
+*/
 const Search = () => {
     return(
         <>
