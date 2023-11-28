@@ -9,8 +9,12 @@ function App() {
   const [items, setItems] = useState([])
   const [latestItem, setLatestItem] = useState([])
 
+   /*
+  Replace YOUR_API_KEY with yout your API KEY for newsAPI in the fetch endpoint
+  */
+
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=d65c1d60e119401fb6895b18270517af`)
+    fetch(`https://newsapi.org/v2/everything?q=tesla&from=2023-10-28&sortBy=publishedAt&apiKey=YOUR_API_KEY`)
     .then(res => {
       if(!res.ok) {
         throw new Error('Api call unsuccessful');
