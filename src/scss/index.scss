@@ -134,4 +134,10 @@
 
 .image-style {
     height: 240px;
+    object-fit: fill;
+}
+
+.main-image-style {
+    height: 480px;
+    object-fit: fill;
 }

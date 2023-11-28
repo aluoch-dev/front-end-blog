@@ -15,7 +15,7 @@ const MainArticle = ({item}) => {
         <div className="container">
             <div className="card main-article">
                 <img 
-                    className="card-img-top image-style"
+                    className="card-img-top main-image-style"
                     src ={item.urlToImage}
                     alt={item.title}
                 />
